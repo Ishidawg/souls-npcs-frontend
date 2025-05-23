@@ -227,6 +227,10 @@ html {
   box-shadow: 0px 0px 10px 1px hsla(0, 0%, 0%, 0.200);
 }
 
+.lore {
+  width: 100%;
+}
+
 .item-header {
   display: flex;
   flex-grow: 1;
@@ -257,6 +261,7 @@ html {
 }
 
 .item-header .name-location h2 {
+  margin: -2px;
   font-style: italic;
 }
 
@@ -334,6 +339,13 @@ html {
 
 .minor-info .symbol {
   font-size: 0.6rem;
+}
+
+.warning-message {
+  text-align: justify;
+  font-size: 1.8rem;
+  max-width: 880px;
+  padding: 2%;
 }
 
 .header-container {
@@ -439,4 +451,58 @@ html {
 
 .modal-form .inputs input::placeholder, select::placeholder, textarea::placeholder, select {
   color: var(--secondary-text-color);
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid var(--text-color);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .item-list {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .item-header {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .item-header article {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .name-location, .occupation-games {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .warning-message{
+    padding: 4%;
+  }
+
+  .npcs-container .disclaimer {
+    padding: 4%;
+  }
 }
