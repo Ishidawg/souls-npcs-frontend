@@ -1,6 +1,6 @@
-export default function List({ npcs, onEdit, onDelete }) {
+export default function List({ npcs, loading, onEdit, onDelete }) {
 
-  if (!npcs.length) {
+  if (loading) {
     return (
       <>
         <div class="loader"></div>

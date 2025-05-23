@@ -24,6 +24,15 @@ export async function searchNpcsByGame(game) {
   return res.json()
 }
 
+// This function is a work around, because I'm not able to modify the API, the time to delivery it to my professor has already done
+// So I will not use the route /search?game=, because in the frontend just dont make sense to search like this
+export async function fetchNpcsByPrimaryGame(game) {
+  const all = await fetchAllNpcs()
+  return all.filter(npc =>
+    npc.game.toLowerCase() === game.toLowerCase()
+  )
+}
+
 export async function createNpc(npc) {
   const res = await fetch(API_ROOT, {
     method: 'POST',

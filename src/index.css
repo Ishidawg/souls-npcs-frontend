@@ -506,3 +506,9 @@ html {
     padding: 4%;
   }
 }
+
+.message-banner {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2.0rem;
+}
