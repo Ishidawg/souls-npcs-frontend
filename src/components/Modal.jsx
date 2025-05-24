@@ -51,13 +51,14 @@ export default function Modal({ npc, onSubmit, onClose }) {
             </select>
             <textarea name="lore" value={form.lore} onChange={handleChange} placeholder="Alexia came from the far lands of Lordran..." rows={4} cols={30} />
             <div>
-              <label>
+              <label className="many-games">
                 Many games?
                 <input
                   type="checkbox"
                   name="manyGames"
                   checked={form.manyGames}
                   onChange={handleChange}
+                  className="checkbox"
                 />
               </label>
             </div>

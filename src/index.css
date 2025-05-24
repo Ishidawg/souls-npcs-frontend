@@ -20,6 +20,8 @@
   --error-color: hsl(0, 66%, 67%);
 
   cursor: url('./assets/cursor/regular.png'), auto;
+
+  scroll-behavior: smooth;
 }
 
 * button {
@@ -401,6 +403,7 @@ html {
   width: 100%;
   height: 100%;
   backdrop-filter: blur(20px);
+  overflow-y: hidden;
 }
 
 .modal-form {
@@ -433,9 +436,17 @@ html {
   justify-content: center;
 }
 
+.many-games {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
 .modal-form .inputs div .checkbox {
+  zoom: 1.5;
   accent-color: var(--background-color);
-  font-size: 2.0rem;
+  width:min-content;
 }
 
 .modal-form .inputs div label {
