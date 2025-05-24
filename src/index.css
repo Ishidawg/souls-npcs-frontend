@@ -179,7 +179,17 @@ html {
 .npcs-container .create-text {
   font-size: 2.8rem;
   font-weight: 700;
-  text-decoration:underline;
+  /* text-decoration:underline; */
+  background-color: var(--text-color);
+  color: var(--background-color);
+  padding: 0.25rem 1rem;
+  transition: all 280ms ease;
+}
+
+.npcs-container .create-text:hover {
+  transform: translateY(-2px);
+  background-color: transparent;
+  color: var(--text-color);
 }
 
 .npcs-container .links {
@@ -493,6 +503,14 @@ html {
   }
 
   .name-location, .occupation-games {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .minor-info {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;

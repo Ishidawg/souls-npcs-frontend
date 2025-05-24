@@ -43,7 +43,6 @@ export default function List({ npcs, loading, onEdit, onDelete }) {
                 <span># {npc.id}</span>
                 {npc.manyGames && (
                   <>
-                    <span className="symbol">&#9679;</span>
                     <span>Also on: {npc.games.join(', ')}</span>
                   </>
                 )}
