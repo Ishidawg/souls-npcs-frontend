@@ -1,3 +1,5 @@
+import defaultAvatar from '/default-avatar.png'
+
 export default function List({ npcs, loading, onEdit, onDelete }) {
 
   if (loading) {
@@ -14,8 +16,19 @@ export default function List({ npcs, loading, onEdit, onDelete }) {
       <div className="list-container">
         <ul className="list">
           {npcs.map(npc => (
-            <li className="item-list">
-              <img src="src/assets/profile-picture.jpg"/>
+            <li className="item-list" key={npc.id}>
+              {/* <img src="src/assets/profile-picture.jpg"/> */}
+              <img
+                src={
+                  npc.imageUrl
+                    ? `https://images.weserv.nl/?url=${encodeURIComponent(
+                        npc.imageUrl.replace(/^https?:\/\//, '')
+                      )}&w=300`
+                    : defaultAvatar
+                }
+                alt={npc.name}
+                onError={e => { e.currentTarget.src = defaultAvatar }}
+              />
               <div className="item-header">
                   <article>
                     <div className="name-location">

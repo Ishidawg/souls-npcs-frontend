@@ -6,10 +6,10 @@ import Modal from "../components/Modal";
 import Search from "../components/Search";
 
 import {
-  fetchAllNpcs,
-  fetchNpcById,
-  searchNpcsByName,
-  fetchNpcsByPrimaryGame,
+  fetchAllNpcsWithImages as fetchAllNpcs,
+  fetchNpcByIdWithImage as fetchNpcById,
+  searchNpcsByNameWithImages as searchNpcsByName,
+  searchNpcsByGameWithImages as searchNpcsByGame,
   // searchNpcsByGame, - remove just for now
   createNpc,
   updateNpc,
@@ -95,7 +95,7 @@ export default function Npcs() {
 
     try {
 
-      const data = await fetchNpcsByPrimaryGame(game).catch(err => {
+      const data = await searchNpcsByGame(game).catch(err => {
         console.error(err)
         return []
       })
@@ -103,7 +103,7 @@ export default function Npcs() {
       setNpcs(data)
   
       if (data.length === 0) {
-        setMessage(`Maybe she/he is not from“${game}”.`)
+        setMessage(`Maybe she/he is not from “${game}”.`)
       }
     } catch {
 
